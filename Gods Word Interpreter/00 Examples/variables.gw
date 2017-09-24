@@ -1,0 +1,10 @@
+@main
+
+int main = 0
+float a = 1.0
+float b = 1 # should be error, trying to store int in double
+float c = (float) main # fine, will call the cast method in int to cast to float
+
+println(main)
+println(a)
+println(c)

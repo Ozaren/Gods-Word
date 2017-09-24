@@ -1,0 +1,26 @@
+# this is a comment
+
+
+# complier tag
+# @main must be the first non-comment in a file, otherwise it is ignored
+@main
+
+# Author: Krishna Sannasi
+
+##
+
+This is a multiline comment
+
+##print("hell")
+
+print("hello")
+println("    world!")
+println()
+println(1)
+println(10)
+println(1.0)
+
+println(1.0+0h5)
+println(1.0+1.0)
+print("jk")
+
