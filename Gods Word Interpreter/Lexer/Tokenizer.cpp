@@ -131,7 +131,7 @@ Token Tokenizer::nextToken() {
 
             bool isSame = true;
 
-            for (int i = 1; i < val.length(); i++) {
+            for (size_t i = 1; i < val.length(); i++) {
                 if (val[i] != nextChar()) {
                     isSame = false;
                     break;

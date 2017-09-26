@@ -30,8 +30,12 @@ struct key {
     static const Token OP_MULT;
     static const Token OP_DIV;
     static const Token OP_MOD;
+    static const Token OP_AND;
+    static const Token OP_OR;
+    static const Token OP_NOT;
 
     // Variables
+    static const Token UNSIGNED;
     static const Token CONST;
     static const Token FUNCTION;
     static const Token TYPE;

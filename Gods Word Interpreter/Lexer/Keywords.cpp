@@ -27,6 +27,7 @@ const Token key::OP_MULT(make(TokenType::OPERATOR, "*"));
 const Token key::OP_DIV(make(TokenType::OPERATOR, "/"));
 const Token key::OP_MOD(make(TokenType::OPERATOR, "%"));
 
+const Token key::UNSIGNED(make(TokenType::KEYWORD, "unsigned"));
 const Token key::CONST(make(TokenType::KEYWORD, "const"));
 const Token key::FUNCTION(make(TokenType::KEYWORD, "func"));
 const Token key::TYPE(make(TokenType::KEYWORD, "type"));
