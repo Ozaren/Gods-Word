@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -121,16 +121,10 @@
     <ClInclude Include="Lexer\TokenizerFile.h" />
     <ClInclude Include="Lexer\TokenizerString.h" />
     <ClInclude Include="Parser\Parser.h" />
-    <ClInclude Include="Parser\Parts\Function\Function.h" />
-    <ClInclude Include="Parser\Parts\Statement\Operator\BinaryOperator.h" />
-    <ClInclude Include="Parser\Parts\Statement\Block\Block.h" />
-    <ClInclude Include="Parser\Parts\Statement\Operator\LogicOperator.h" />
-    <ClInclude Include="Parser\Parts\Statement\Operator\UnaryOperator.h" />
-    <ClInclude Include="Parser\Parts\Statement\Statement.h" />
-    <ClInclude Include="Parser\Parts\Type\DefualtTypes.h" />
-    <ClInclude Include="Parser\Parts\Type\Type.h" />
-    <ClInclude Include="Parser\Parts\Variable\Literals.h" />
-    <ClInclude Include="Parser\Parts\Variable\Variable.h" />
+    <ClInclude Include="Parser\Parts\DefualtTypes.h" />
+    <ClInclude Include="Parser\Parts\Literals.h" />
+    <ClInclude Include="Parser\Parts\Type.h" />
+    <ClInclude Include="Parser\Parts\Variable.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lexer\Keywords.cpp" />
@@ -140,14 +134,9 @@
     <ClCompile Include="Lexer\Tokenizer.cpp" />
     <ClCompile Include="Lexer\TokenizerString.cpp" />
     <ClCompile Include="Parser\Parser.cpp" />
-    <ClCompile Include="Parser\Parts\Statement\Block\Block.cpp" />
-    <ClCompile Include="Parser\Parts\Statement\Operator\BinaryOperator.cpp" />
-    <ClCompile Include="Parser\Parts\Statement\Operator\LogicOperator.cpp" />
-    <ClCompile Include="Parser\Parts\Statement\Operator\UnaryOperator.cpp" />
-    <ClCompile Include="Parser\Parts\Type\DefualtTypes.cpp" />
-    <ClCompile Include="Parser\Parts\Type\Type.cpp" />
-    <ClCompile Include="Parser\Parts\Variable\Variable.cpp" />
-    <ClCompile Include="Parser\Parts\Variable\Literals.cpp" />
+    <ClCompile Include="Parser\Parts\DefualtTypes.cpp" />
+    <ClCompile Include="Parser\Parts\Literals.cpp" />
+    <ClCompile Include="Parser\Parts\Variable.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
