@@ -3,8 +3,12 @@
 
 #include <memory>
 #include <string>
+#include <vector>
 
 namespace GWI {
+    class Variable;
+    class TypeFunction;
+
     class Type {
     public:
         Type(std::string name);
@@ -16,6 +20,9 @@ namespace GWI {
         bool operator!=(const Type &t) const { return !operator==(t); }
     private:
         static int next_id;
+
+        std::vector<std::shared_ptr<Variable>> properties;
+        std::vector<std::shared_ptr<TypeFunction>> functions;
     };
 
     typedef std::shared_ptr<Type> TypeP;

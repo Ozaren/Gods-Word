@@ -17,6 +17,8 @@ namespace GWI {
         virtual void execute(std::vector<VariableP> &vars);
 
     protected:
+        Block(std::vector<StatementP> &statements);
+
         void addStatement(const StatementP statement);
         template <template <typename, typename> class Container,
             typename Allocator = std::allocator<Statement*> >

@@ -7,22 +7,10 @@
 #include "../Statement/Statement.h"
 #include "../Statement/Block/Block.h"
 
+#include "FunctionSignature.h"
+#include "FunctionBody.h"
+
 namespace GWI {
-    class FunctionSignature {
-    public:
-        FunctionSignature(std::string name, std::vector<TypeP> arg_types);
-
-        const std::string name;
-        const std::vector<TypeP> arg_types;
-
-        bool validateArguments(std::vector<VariableP> variables);
-    };
-
-    class FunctionBody : public Block {
-    public:
-        FunctionBody(std::vector<StatementP> &statements);
-    };
-
     class Function {
     public:
         Function(const FunctionSignature &signature, const FunctionBody &body);
@@ -30,6 +18,8 @@ namespace GWI {
         const FunctionSignature &signature;
         const FunctionBody &body;
     };
+
+    typedef std::shared_ptr<Function> FunctionP;
 }
 
 #endif

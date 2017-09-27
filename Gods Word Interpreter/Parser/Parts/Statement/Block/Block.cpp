@@ -7,6 +7,11 @@ Block::Block() {
 
 }
 
+Block::Block(vector<StatementP> &statements) 
+    : contents(statements) {
+
+}
+
 void Block::addStatement(const StatementP statement) {
     contents.push_back(statement);
 }

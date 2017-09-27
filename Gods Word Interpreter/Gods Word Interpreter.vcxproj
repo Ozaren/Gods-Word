@@ -122,6 +122,8 @@
     <ClInclude Include="Lexer\TokenizerString.h" />
     <ClInclude Include="Parser\Parser.h" />
     <ClInclude Include="Parser\Parts\Function\Function.h" />
+    <ClInclude Include="Parser\Parts\Function\FunctionBody.h" />
+    <ClInclude Include="Parser\Parts\Function\FunctionSignature.h" />
     <ClInclude Include="Parser\Parts\Statement\Operator\BinaryOperator.h" />
     <ClInclude Include="Parser\Parts\Statement\Block\Block.h" />
     <ClInclude Include="Parser\Parts\Statement\Operator\LogicOperator.h" />
@@ -129,6 +131,7 @@
     <ClInclude Include="Parser\Parts\Statement\Statement.h" />
     <ClInclude Include="Parser\Parts\Type\DefualtTypes.h" />
     <ClInclude Include="Parser\Parts\Type\Type.h" />
+    <ClInclude Include="Parser\Parts\Type\TypeFunction.h" />
     <ClInclude Include="Parser\Parts\Variable\Literals.h" />
     <ClInclude Include="Parser\Parts\Variable\Variable.h" />
   </ItemGroup>
@@ -140,6 +143,7 @@
     <ClCompile Include="Lexer\Tokenizer.cpp" />
     <ClCompile Include="Lexer\TokenizerString.cpp" />
     <ClCompile Include="Parser\Parser.cpp" />
+    <ClCompile Include="Parser\Parts\Function\Function.cpp" />
     <ClCompile Include="Parser\Parts\Statement\Block\Block.cpp" />
     <ClCompile Include="Parser\Parts\Statement\Operator\BinaryOperator.cpp" />
     <ClCompile Include="Parser\Parts\Statement\Operator\LogicOperator.cpp" />
