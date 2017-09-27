@@ -10,6 +10,7 @@ namespace GWI {
     public:
         FunctionBody(std::vector<StatementP> &statements);
     };
+    typedef std::shared_ptr<FunctionBody> FunctionBodyP;
 }
 
 #endif

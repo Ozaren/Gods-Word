@@ -1,6 +1,7 @@
 #ifndef __GWI_PARSER_PARTS_TYPE__FUNCTION_SIGNATURE_H__
 #define __GWI_PARSER_PARTS_TYPE__FUNCTION_SIGNATURE_H__
 
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -17,6 +18,7 @@ namespace GWI {
 
         bool validateArguments(std::vector<VariableP> variables);
     };
+    typedef std::shared_ptr<FunctionSignature> FunctionSignatureP;
 }
 
 #endif

@@ -150,6 +150,7 @@
     <ClCompile Include="Parser\Parts\Statement\Operator\UnaryOperator.cpp" />
     <ClCompile Include="Parser\Parts\Type\DefualtTypes.cpp" />
     <ClCompile Include="Parser\Parts\Type\Type.cpp" />
+    <ClCompile Include="Parser\Parts\Type\TypeFunction.cpp" />
     <ClCompile Include="Parser\Parts\Variable\Variable.cpp" />
     <ClCompile Include="Parser\Parts\Variable\Literals.cpp" />
   </ItemGroup>

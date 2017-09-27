@@ -126,5 +126,8 @@
     <ClCompile Include="Parser\Parts\Function\Function.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Parser\Parts\Type\TypeFunction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

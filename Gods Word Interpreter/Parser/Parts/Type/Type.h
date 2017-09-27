@@ -9,19 +9,26 @@ namespace GWI {
     class Variable;
     class TypeFunction;
 
+    typedef std::vector<std::shared_ptr<Variable>> VarCol;
+
     class Type {
     public:
-        Type(std::string name);
-
         const int id;
         const std::string name;
 
+        Type(std::string name);
+
         bool operator==(const Type &t) const { return t.id == id; }
         bool operator!=(const Type &t) const { return !operator==(t); }
+
+        void call(int function, VarCol vars);
+        void call(std::string function, VarCol vars);
     private:
+        void call(std::shared_ptr<TypeFunction> function, VarCol vars);
+
         static int next_id;
 
-        std::vector<std::shared_ptr<Variable>> properties;
+        VarCol properties;
         std::vector<std::shared_ptr<TypeFunction>> functions;
     };
 

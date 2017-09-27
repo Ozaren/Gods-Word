@@ -1,3 +1,5 @@
+#include "FunctionSignature.h"
+#include "FunctionBody.h"
 #include "Function.h"
 
 using namespace std;
@@ -29,7 +31,7 @@ FunctionBody::FunctionBody(vector<StatementP> &statements)
 
 }
 
-Function::Function(const FunctionSignature &sig, const FunctionBody &_body)
+Function::Function(const FunctionSignatureP &sig, const FunctionBodyP &_body)
     : signature(sig), body(_body) {
 
 }

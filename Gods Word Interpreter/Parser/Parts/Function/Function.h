@@ -13,10 +13,10 @@
 namespace GWI {
     class Function {
     public:
-        Function(const FunctionSignature &signature, const FunctionBody &body);
+        Function(const FunctionSignatureP &signature, const FunctionBodyP &body);
 
-        const FunctionSignature &signature;
-        const FunctionBody &body;
+        const FunctionSignatureP signature;
+        const FunctionBodyP body;
     };
 
     typedef std::shared_ptr<Function> FunctionP;
