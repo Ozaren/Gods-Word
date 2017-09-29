@@ -19,19 +19,19 @@ void OperatorAnd::execute(VariableP &left, VariableP &right, VariableP &result) 
     if (checkBoolean({ &left, &right, &result }))
         return;
 
-    result->value = (void*)(((bool)left->value) && ((bool)(right->value)));
+    result->setValue((void*)(((bool)left->getValue()) && ((bool)(right->getValue()))));
 }
 
 void OperatorOr::execute(VariableP &left, VariableP &right, VariableP &result) {
     if (checkBoolean({ &left, &right, &result }))
         return;
 
-    result->value = (void*)(((bool)left->value) || ((bool)(right->value)));
+    result->setValue((void*)(((bool)left->getValue()) || ((bool)(right->getValue()))));
 }
 
 void OperatorNot::execute(VariableP &val, VariableP &result) {
     if (checkBoolean({ &val, &result }))
         return;
 
-    result->value = (void*) (!((bool)val->value));
+    result->setValue((void*)(!((bool)val->getValue())));
 }

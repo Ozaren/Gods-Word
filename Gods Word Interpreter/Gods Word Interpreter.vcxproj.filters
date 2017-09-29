@@ -17,6 +17,7 @@
   <ItemGroup>
     <None Include="00 Examples\commments and output.gw" />
     <None Include="00 Examples\variables.gw" />
+    <None Include="00 Examples\load_test.gw" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lexer\Tokenizer.h">
@@ -115,9 +116,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Parser\Parts\Variable\Literals.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Parser\Parts\Variable\Variable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Parser\Parts\Statement\Block\Block.cpp">

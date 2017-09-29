@@ -17,3 +17,8 @@ TypeFunction::TypeFunction(const FunctionSignatureP &sig, const FunctionBodyP &b
     , IS_ABSTRACT(chkMod(GWI_TF_ABSTR)) {
 
 }
+
+TypeFunction::TypeFunction(const Function &func, int mod) 
+    : TypeFunction(func.signature, func.body, mod) {
+
+}

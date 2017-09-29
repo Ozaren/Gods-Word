@@ -7,6 +7,7 @@
 
 namespace GWI {
     class Variable;
+    class Function;
     class TypeFunction;
 
     typedef std::vector<std::shared_ptr<Variable>> VarCol;
@@ -20,6 +21,10 @@ namespace GWI {
 
         bool operator==(const Type &t) const { return t.id == id; }
         bool operator!=(const Type &t) const { return !operator==(t); }
+        bool operator==(const Type *t) const { return operator==(*t); }
+        bool operator!=(const Type *t) const { return !operator==(t); }
+
+        bool addFunction(std::shared_ptr<Function> function, int mod);
 
         void call(int function, VarCol vars);
         void call(std::string function, VarCol vars);

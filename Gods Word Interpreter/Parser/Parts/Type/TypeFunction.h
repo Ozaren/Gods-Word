@@ -17,6 +17,7 @@ namespace GWI {
     class TypeFunction : public Function {
     public:
         TypeFunction(const FunctionSignatureP &signature, const FunctionBodyP &body, int mod);
+        TypeFunction(const Function &func, int mod);
 
         const int mod;
 

@@ -5,32 +5,64 @@
 #include "Lexer/Keywords.h"
 #include "Lexer/Tokenizer.h"
 #include "Lexer/TokenizerFile.h"
-
 /*
-#include "Parser/Parts/Type/Type.h"
-#include "Parser/Parts/Type/DefualtTypes.h"
-#include "Parser/Parts/Variables/Literals.h"
-#include "Parser/Parts/Variables/Variable.h"
+#include "Parser\Parts\Type\Type.h"
+#include "Parser\Parts\Type\DefualtTypes.h"
+
+#include "Parser\Parts\Function\FunctionSignature.h"
+#include "Parser\Parts\Function\FunctionBody.h"
+#include "Parser\Parts\Function\Function.h"
+
+#include "Parser\Parts\Statement\Statement.h"
+
+#include "Parser\Parts\Variable\Variable.h"
+#include "Parser\Parts\Variable\Literals.h"
 */
-
 using namespace std;
-
-int main() {
-
-}
+//using GWI::def_type;
 
 int main1() {
+
+    system("pause");
+    return 0;
+}
+
+long GetFileSize(std::string filename)
+{
+    struct stat stat_buf;
+    int rc = stat(filename.c_str(), &stat_buf);
+    return rc == 0 ? stat_buf.st_size : -1;
+}
+
+#include <sys\timeb.h>
+int main() {
     cout << "start" << endl;
 
-    TokenizerFile t("00 Examples/commments and output.gw");
+    struct timeb start, end;
+    int diff;
+    int i = 0;
+    ftime(&start);
+
+    //TokenizerFile t("00 Examples/commments and output.gw");
+    const char* filename = "00 Examples/load_test.gw";
+    TokenizerFile t(filename);
     vector<Token> tokens;
 
     while (!t.isDone()) {
         Token tok(t.next());
-        string val(tok.getValue());
+        tokens.push_back(tok);
+        // string val(tok.getValue());
 
-        cout << tok.getType() << '\t' << (val == "\n" ? "$NEWLINE$" : val) << endl;
+        // cout << tok.getType() << '\t' << (val == "\n" ? "$NEWLINE$" : val) << endl;
     }
+
+    ftime(&end);
+    diff = (int)(1000.0 * (end.time - start.time)
+        + (end.millitm - start.millitm));
+
+    printf("\Lexing took %u milliseconds\n", diff);
+    printf("Speed: %u bytes/sec\n", GetFileSize(filename) * 1000 / diff);
+    printf("Vector size: %u\n", tokens.capacity() * sizeof(Token) + sizeof(tokens));
 
     system("pause");
 

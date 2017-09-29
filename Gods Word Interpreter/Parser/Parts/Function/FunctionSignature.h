@@ -17,6 +17,11 @@ namespace GWI {
         const std::vector<TypeP> arg_types;
 
         bool validateArguments(std::vector<VariableP> variables);
+
+        bool operator==(const FunctionSignature &sig) const;
+        bool operator!=(const FunctionSignature &sig) const { return !operator==(sig); }
+        bool operator==(const FunctionSignature *sig) const { return operator==(*sig); }
+        bool operator!=(const FunctionSignature *sig) const { return !operator==(sig); }
     };
     typedef std::shared_ptr<FunctionSignature> FunctionSignatureP;
 }

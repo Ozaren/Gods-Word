@@ -13,7 +13,9 @@ namespace GWI {
             Literal(const TypeP &type, void* value);
 
             const TypeP type;
-            const void* value;
+            const void *value;
+
+            const void* getValue() const { return value; }
         };
 
         class Boolean : public Literal {

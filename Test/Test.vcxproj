@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{DBB5F32A-05F5-48D9-B7B4-27DB2EFE3311}</ProjectGuid>
-    <RootNamespace>GodsWordInterpreter</RootNamespace>
+    <ProjectGuid>{A872AD41-4EA1-46AE-82B6-9FB3BD86FA68}</ProjectGuid>
+    <RootNamespace>Test</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -111,48 +111,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="00 Examples\commments and output.gw" />
-    <None Include="00 Examples\load_test.gw" />
-    <None Include="00 Examples\variables.gw" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Lexer\Keywords.h" />
-    <ClInclude Include="Lexer\Token.h" />
-    <ClInclude Include="Lexer\Tokenizer.h" />
-    <ClInclude Include="Lexer\TokenizerFile.h" />
-    <ClInclude Include="Lexer\TokenizerString.h" />
-    <ClInclude Include="Parser\Parser.h" />
-    <ClInclude Include="Parser\Parts\Function\Function.h" />
-    <ClInclude Include="Parser\Parts\Function\FunctionBody.h" />
-    <ClInclude Include="Parser\Parts\Function\FunctionSignature.h" />
-    <ClInclude Include="Parser\Parts\Statement\Operator\BinaryOperator.h" />
-    <ClInclude Include="Parser\Parts\Statement\Block\Block.h" />
-    <ClInclude Include="Parser\Parts\Statement\Operator\LogicOperator.h" />
-    <ClInclude Include="Parser\Parts\Statement\Operator\UnaryOperator.h" />
-    <ClInclude Include="Parser\Parts\Statement\Statement.h" />
-    <ClInclude Include="Parser\Parts\Type\DefualtTypes.h" />
-    <ClInclude Include="Parser\Parts\Type\Type.h" />
-    <ClInclude Include="Parser\Parts\Type\TypeFunction.h" />
-    <ClInclude Include="Parser\Parts\Variable\Literals.h" />
-    <ClInclude Include="Parser\Parts\Variable\Variable.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Lexer\Keywords.cpp" />
-    <ClCompile Include="Lexer\TokenizerFile.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Lexer\Token.cpp" />
-    <ClCompile Include="Lexer\Tokenizer.cpp" />
-    <ClCompile Include="Lexer\TokenizerString.cpp" />
-    <ClCompile Include="Parser\Parser.cpp" />
-    <ClCompile Include="Parser\Parts\Function\Function.cpp" />
-    <ClCompile Include="Parser\Parts\Statement\Block\Block.cpp" />
-    <ClCompile Include="Parser\Parts\Statement\Operator\BinaryOperator.cpp" />
-    <ClCompile Include="Parser\Parts\Statement\Operator\LogicOperator.cpp" />
-    <ClCompile Include="Parser\Parts\Statement\Operator\UnaryOperator.cpp" />
-    <ClCompile Include="Parser\Parts\Type\DefualtTypes.cpp" />
-    <ClCompile Include="Parser\Parts\Type\Type.cpp" />
-    <ClCompile Include="Parser\Parts\Type\TypeFunction.cpp" />
-    <ClCompile Include="Parser\Parts\Variable\Literals.cpp" />
+    <ClCompile Include="TestMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

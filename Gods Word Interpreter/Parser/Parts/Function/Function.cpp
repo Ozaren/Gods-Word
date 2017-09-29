@@ -26,6 +26,10 @@ bool FunctionSignature::validateArguments(std::vector<VariableP> variables) {
     return true;
 }
 
+bool FunctionSignature::operator==(const FunctionSignature &sig) const {
+    return sig.name == name && sig.arg_types == arg_types;
+}
+
 FunctionBody::FunctionBody(vector<StatementP> &statements)
     : Block(statements) {
 
