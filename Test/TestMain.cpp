@@ -44,6 +44,14 @@ struct memory {
     Puts a value in memory
     */
     template<typename type = char>
+    int canset(size_t address, type& val) {
+        int size = sizeof(val);
+        return size + address <= buffer.size();
+    }
+    /**
+    Puts a value in memory
+    */
+    template<typename type = char>
     int set(size_t address, type& val) {
         int size = sizeof(val);
         if (size + address > buffer.size()) {
@@ -73,10 +81,13 @@ struct memory {
     }
 
     /**
-    doubles buffer size
+    doubles buffer size, if buffer is zero size, make 16 bytes
     */
     void expand() {
-        expand(buffer.size());
+        if (buffer.size() == 0)
+            expand(0x10);
+        else
+            expand(buffer.size());
     }
 
     /**
@@ -124,8 +135,15 @@ struct managed_memory : protected memory {
 
     managed_memory(size_t size = 0) : memory(size), pos(0) {}
 
+    /**
+    Adds t to first empty spot with space, if not enough space, 
+    automatically calls memory::expand
+    */
     template<typename type>
     void add(type t) {
+        while (!canset<type>(pos, t)) {
+            expand();
+        }
         size_t size = set<type>(pos, t);
         pos += size;
         sizes.push_back(size);
@@ -143,7 +161,7 @@ int main() {
     bool caught = false;
     try {
         constexpr int count = 8;
-        managed_memory m(count * sizeof(double));
+        managed_memory m;
 
         for (int i = 0; i < count; i++) {
             m.add<double>(i);
