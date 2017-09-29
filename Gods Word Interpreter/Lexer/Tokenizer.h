@@ -3,6 +3,7 @@
 
 #include <string>
 #include <stack>
+#include <vector>
 
 #include "Token.h"
 
@@ -38,6 +39,8 @@ private:
 
     char nextChar();
     void moveBack();
+
+    int hkl(const std::vector<Token> &keywords, char c);
 };
 
 #endif // !__GWI_LEXER__TOKENIZER_H__

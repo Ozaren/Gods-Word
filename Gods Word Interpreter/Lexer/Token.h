@@ -39,6 +39,7 @@ public:
     }
 
     bool operator==(const Token &other) const { return type == other.type&&value == other.value; }
+    bool operator!=(const Token &other) const { return !operator==(other); }
 
 private:
     TokenType type;

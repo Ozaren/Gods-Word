@@ -81,6 +81,33 @@ string Tokenizer::nextWord() {
     return str;
 }
 
+int Tokenizer::hkl(const std::vector<Token> &keywords, char c) {
+    setMarker();
+    for (int i = 0; i < keywords.size(); i++) {
+        const Token &t = keywords[i];
+        string val(t.getValue());
+        if (val[0] == c) {
+            setMarker();
+
+            bool isSame = true;
+
+            for (size_t i = 1; i < val.length(); i++) {
+                if (val[i] != nextChar()) {
+                    isSame = false;
+                    break;
+                }
+            }
+
+            popMarker();
+            if (isSame)
+                return i;
+        }
+    }
+    popMarker();
+
+    return -1;
+}
+
 Token Tokenizer::nextToken() {
     // check for end of file
     END_CHECK;
@@ -123,27 +150,16 @@ Token Tokenizer::nextToken() {
         }
     }
 
-    setMarker();
-    for (Token t : key::getOperators()) {
-        string val(t.getValue());
-        if (val[0] == c) {
-            setMarker();
+    const vector<Token> &ops = key::getOperators();
+    int id;
+    id = hkl(key::getOperators(), c);
+    if (id != -1)
+        return key::getOperators()[id];
 
-            bool isSame = true;
-
-            for (size_t i = 1; i < val.length(); i++) {
-                if (val[i] != nextChar()) {
-                    isSame = false;
-                    break;
-                }
-            }
-
-            popMarker();
-            if (isSame)
-                return t;
-        }
-    }
-    popMarker();
+    const vector<Token> &punc = key::getPunctuation();
+    id = hkl(punc, c);
+    if (id != -1)
+        return punc[id];
 
     switch (c) {
     case '"': {

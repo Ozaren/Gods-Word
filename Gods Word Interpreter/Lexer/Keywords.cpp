@@ -16,6 +16,7 @@ const Token key::PAREN_CLOSE(make(TokenType::PUNCTUATION, ")"));
 const Token key::BRACK_OPEN(make(TokenType::PUNCTUATION, "["));
 const Token key::BRACK_CLOSE(make(TokenType::PUNCTUATION, "]"));
 const Token key::DOT(make(TokenType::PUNCTUATION, "."));
+const Token key::COMMA(make(TokenType::PUNCTUATION, ","));
 const Token key::NEW_LINE(make(TokenType::PUNCTUATION, "\n"));
 
 const Token key::BOOL_TRUE(make(TokenType::LITERAL_BOOLEAN, "true"));
@@ -30,6 +31,7 @@ const Token key::OP_MOD(make(TokenType::OPERATOR, "%"));
 const Token key::UNSIGNED(make(TokenType::KEYWORD, "unsigned"));
 const Token key::CONST(make(TokenType::KEYWORD, "const"));
 const Token key::FUNCTION(make(TokenType::KEYWORD, "func"));
+const Token key::OUT(make(TokenType::KEYWORD, "out"));
 const Token key::TYPE(make(TokenType::KEYWORD, "type"));
 
 const Token key::STAT_IF(make(TokenType::KEYWORD, "if"));

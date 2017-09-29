@@ -18,6 +18,7 @@ struct key {
     static const Token BRACK_OPEN;
     static const Token BRACK_CLOSE;
     static const Token DOT;
+    static const Token COMMA;
     static const Token NEW_LINE;
 
     // Literals
@@ -39,6 +40,7 @@ struct key {
     static const Token CONST;
     static const Token FUNCTION;
     static const Token TYPE;
+    static const Token OUT;
 
     // Control Statements
     static const Token STAT_IF;
