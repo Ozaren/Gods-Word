@@ -1,5 +1,7 @@
 #include "Literals.h"
 
+#include "../Type/DefualtTypes.h"
+
 using namespace std;
 using namespace GWI;
 using namespace literal_value;

@@ -1,8 +1,8 @@
 #ifndef __GWI_PARSER_PARTS_BLOCK__STATEMENT_H__
 #define __GWI_PARSER_PARTS_BLOCK__STATEMENT_H__
 
-#include <vector>
 #include <memory>
+#include <vector>
 
 #include "../Variable/Variable.h"
 

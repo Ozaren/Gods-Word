@@ -2,6 +2,7 @@
 #define __GWI_PARSER_PARTS_BLOCK__LOGIC_STATEMENT_H__
 
 #include "../../Type/DefualtTypes.h"
+#include "../../Variable/Variable.h"
 
 #include "BinaryOperator.h"
 #include "UnaryOperator.h"

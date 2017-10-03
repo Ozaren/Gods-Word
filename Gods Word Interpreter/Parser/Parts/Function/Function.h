@@ -1,11 +1,9 @@
 #ifndef __GWI_PARSER_PARTS_FUNCTION__FUNCTION_H__
 #define __GWI_PARSER_PARTS_FUNCTION__FUNCTION_H__
 
+#include <memory>
 #include <vector>
 #include <string>
-
-#include "../Statement/Statement.h"
-#include "../Statement/Block/Block.h"
 
 #include "FunctionSignature.h"
 #include "FunctionBody.h"

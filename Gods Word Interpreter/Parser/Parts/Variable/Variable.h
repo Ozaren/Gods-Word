@@ -1,6 +1,8 @@
 #ifndef __GWI_PARSER_PARTS_VARIABLE__VARIABLE_H__
 #define __GWI_PARSER_PARTS_VARIABLE__VARIABLE_H__
 
+#include <memory>
+
 #include "../Type/Type.h"
 
 namespace GWI {
@@ -8,13 +10,13 @@ namespace GWI {
     class Variable {
     public:
         typedef std::shared_ptr<Variable> pointer;
+        
+        const Type::pointer type;
 
         Variable(const Type::pointer &_type, var_val _value)
             : type(_type), value(_value) {
 
         }
-
-        const Type::pointer type;
 
         Variable& operator=(var_val &val) { value = val; }
 
@@ -30,6 +32,7 @@ namespace GWI {
                 value = (var_val)val.getValue();
         }
         */
+
         bool setValue(void *val) {
             value = val;
         }

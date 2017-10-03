@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "../Statement.h"
+#include "../../Variable/Variable.h"
 
 namespace GWI {
     class BinaryOperator : public Statement {
