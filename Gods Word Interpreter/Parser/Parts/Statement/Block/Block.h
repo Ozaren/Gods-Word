@@ -14,12 +14,12 @@ namespace GWI {
     public:
         Block();
 
-        virtual void execute(std::vector<VariableP> &vars);
+        virtual void execute(std::vector<Variable::pointer> &vars);
 
     protected:
-        Block(std::vector<StatementP> &statements);
+        Block(std::vector<Statement::pointer> &statements);
 
-        void addStatement(const StatementP statement);
+        void addStatement(const Statement::pointer statement);
         template <template <typename, typename> class Container,
             typename Allocator = std::allocator<Statement*> >
             void addAllStatements(const Container<Statement*, Allocator> &statements) {
@@ -27,7 +27,7 @@ namespace GWI {
         }
 
     private:
-        std::vector<StatementP> contents;
+        std::vector<Statement::pointer> contents;
     };
 }
 

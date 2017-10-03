@@ -8,9 +8,9 @@
 namespace GWI {
     class BinaryOperator : public Statement {
     public:
-        virtual void execute(std::vector<VariableP> &variables) final;
+        virtual void execute(std::vector<Variable::pointer> &variables) final;
 
-        virtual inline void execute(VariableP &left, VariableP &right, VariableP &result) = 0;
+        virtual inline void execute(Variable::pointer &left, Variable::pointer &right, Variable::pointer &result) = 0;
     };
 }
 #endif

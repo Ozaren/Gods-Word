@@ -7,17 +7,17 @@ Block::Block() {
 
 }
 
-Block::Block(vector<StatementP> &statements) 
+Block::Block(vector<Statement::pointer> &statements)
     : contents(statements) {
 
 }
 
-void Block::addStatement(const StatementP statement) {
+void Block::addStatement(const Statement::pointer statement) {
     contents.push_back(statement);
 }
 
-void Block::execute(std::vector<VariableP> &variables) {
-    for (StatementP s: contents) {
+void Block::execute(std::vector<Variable::pointer> &variables) {
+    for (Statement::pointer s: contents) {
         s->execute(variables);
     }
 }

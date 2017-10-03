@@ -3,33 +3,33 @@
 using namespace std;
 using namespace GWI;
 
-bool Logic::checkBoolean(const VariableP &var) {
+bool Logic::checkBoolean(const Variable::pointer &var) {
     return *var->type == *def_type::BOOLEAN;
 }
 
-bool Logic::checkBoolean(std::initializer_list<const VariableP*> vars) {
-    for (const VariableP *v : vars) {
+bool Logic::checkBoolean(std::initializer_list<const Variable::pointer*> vars) {
+    for (const Variable::pointer *v : vars) {
         if (!checkBoolean(*v))
             return false;
     }
     return true;
 }
 
-void OperatorAnd::execute(VariableP &left, VariableP &right, VariableP &result) {
+void OperatorAnd::execute(Variable::pointer &left, Variable::pointer &right, Variable::pointer &result) {
     if (checkBoolean({ &left, &right, &result }))
         return;
 
     result->setValue((void*)(((bool)left->getValue()) && ((bool)(right->getValue()))));
 }
 
-void OperatorOr::execute(VariableP &left, VariableP &right, VariableP &result) {
+void OperatorOr::execute(Variable::pointer &left, Variable::pointer &right, Variable::pointer &result) {
     if (checkBoolean({ &left, &right, &result }))
         return;
 
     result->setValue((void*)(((bool)left->getValue()) || ((bool)(right->getValue()))));
 }
 
-void OperatorNot::execute(VariableP &val, VariableP &result) {
+void OperatorNot::execute(Variable::pointer &val, Variable::pointer &result) {
     if (checkBoolean({ &val, &result }))
         return;
 

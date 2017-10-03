@@ -16,7 +16,9 @@
 namespace GWI {
     class TypeFunction : public Function {
     public:
-        TypeFunction(const FunctionSignatureP &signature, const FunctionBodyP &body, int mod);
+        typedef std::shared_ptr<TypeFunction> pointer;
+
+        TypeFunction(const FunctionSignature::pointer &signature, const FunctionBody::pointer &body, int mod);
         TypeFunction(const Function &func, int mod);
 
         const int mod;
@@ -30,7 +32,6 @@ namespace GWI {
         bool chkMod(int cmod) const;
     };
 
-    typedef std::shared_ptr<TypeFunction> TypeFunctionP;
 }
 
 #endif

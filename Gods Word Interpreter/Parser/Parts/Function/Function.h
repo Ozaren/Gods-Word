@@ -13,10 +13,12 @@
 namespace GWI {
     class Function {
     public:
-        const FunctionSignatureP signature;
-        const FunctionBodyP body;
+        typedef std::shared_ptr<Function> pointer;
 
-        Function(const FunctionSignatureP &signature, const FunctionBodyP &body);
+        const FunctionSignature::pointer signature;
+        const FunctionBody::pointer body;
+
+        Function(const FunctionSignature::pointer &signature, const FunctionBody::pointer &body);
 
         /*
         To check if two functions are identical,
@@ -42,8 +44,6 @@ namespace GWI {
         */
         virtual bool operator!=(const Function *func) const final { return !operator==(func); }
     };
-
-    typedef std::shared_ptr<Function> FunctionP;
 }
 
 #endif

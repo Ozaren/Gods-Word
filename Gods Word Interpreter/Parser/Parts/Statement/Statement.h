@@ -12,10 +12,10 @@ namespace GWI {
     */
     class Statement {
     public:
-        virtual void execute(std::vector<VariableP> &variables) = 0;
-    };
+        typedef std::shared_ptr<Statement> pointer;
 
-    typedef std::shared_ptr<Statement> StatementP;
+        virtual void execute(std::vector<Variable::pointer> &variables) = 0;
+    };
 }
 
 #endif

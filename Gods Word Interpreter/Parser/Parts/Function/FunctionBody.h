@@ -8,9 +8,10 @@
 namespace GWI {
     class FunctionBody : public Block {
     public:
-        FunctionBody(std::vector<StatementP> &statements);
+        typedef std::shared_ptr<FunctionBody> pointer;
+
+        FunctionBody(std::vector<Statement::pointer> &statements);
     };
-    typedef std::shared_ptr<FunctionBody> FunctionBodyP;
 }
 
 #endif

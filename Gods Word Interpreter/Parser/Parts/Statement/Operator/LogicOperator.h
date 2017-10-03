@@ -9,20 +9,20 @@
 namespace GWI {
     class Logic {
     protected:
-        static bool checkBoolean(const VariableP &var);
-        static bool checkBoolean(std::initializer_list<const VariableP*> vars);
+        static bool checkBoolean(const Variable::pointer &var);
+        static bool checkBoolean(std::initializer_list<const Variable::pointer*> vars);
     };
 
     class OperatorAnd : public BinaryOperator, private Logic {
-        virtual inline void execute(VariableP &left, VariableP &right, VariableP &result);
+        virtual inline void execute(Variable::pointer &left, Variable::pointer &right, Variable::pointer &result);
     };
 
     class OperatorOr : public BinaryOperator, private Logic {
-        virtual inline void execute(VariableP &left, VariableP &right, VariableP &result);
+        virtual inline void execute(Variable::pointer &left, Variable::pointer &right, Variable::pointer &result);
     };
 
     class OperatorNot : public UnaryOperator, private Logic {
-        virtual inline void execute(VariableP &val, VariableP &result);
+        virtual inline void execute(Variable::pointer &val, Variable::pointer &result);
     };
 }
 #endif

@@ -4,37 +4,32 @@ using namespace std;
 using namespace GWI;
 using namespace literal_value;
 
-Literal::Literal(const TypeP &_type, void* _value)
-    : type(_type), value(_value) {
-
-}
-
-Boolean::Boolean(void* value)
+Boolean::Boolean(bool value)
     : Literal(def_type::BOOLEAN, value) {
 
 }
 
-Integer::Integer(void* value)
+Integer::Integer(int value)
     : Literal(def_type::INT, value) {
 
 }
 
-U_Integer::U_Integer(void* value)
+U_Integer::U_Integer(unsigned int value)
     : Literal(def_type::UINT, value) {
 
 }
 
-Float::Float(void* value)
+Float::Float(double value)
     : Literal(def_type::FLOAT, value) {
 
 }
 
-Character::Character(void* value)
+Character::Character(char value)
     : Literal(def_type::CHAR, value) {
 
 }
 
-String::String(void* value)
+String::String(string value)
     : Literal(def_type::STRING, value) {
 
 }

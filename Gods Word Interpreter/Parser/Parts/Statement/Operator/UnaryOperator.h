@@ -8,9 +8,9 @@
 namespace GWI {
     class UnaryOperator : public Statement {
     public:
-        virtual void execute(std::vector<VariableP> &variables) final;
+        virtual void execute(std::vector<Variable::pointer> &variables) final;
 
-        virtual inline void execute(VariableP &val, VariableP &result) = 0;
+        virtual inline void execute(Variable::pointer &val, Variable::pointer &result) = 0;
     };
 }
 

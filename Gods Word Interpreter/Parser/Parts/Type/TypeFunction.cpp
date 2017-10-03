@@ -7,7 +7,7 @@ bool TypeFunction::chkMod(int cmod) const {
     return (mod & cmod) != 0;
 }
 
-TypeFunction::TypeFunction(const FunctionSignatureP &sig, const FunctionBodyP &body, int _mod) 
+TypeFunction::TypeFunction(const FunctionSignature::pointer &sig, const FunctionBody::pointer &body, int _mod)
     : Function(sig, body)
     , mod(_mod)
     , IS_PUBLIC(chkMod(GWI_TF_PUB)) 

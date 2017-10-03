@@ -11,19 +11,20 @@
 namespace GWI {
     class FunctionSignature {
     public:
-        FunctionSignature(std::string name, std::vector<TypeP> arg_types);
+        typedef std::shared_ptr<FunctionSignature> pointer;
+
+        FunctionSignature(std::string name, std::vector<Type::pointer> arg_types);
 
         const std::string name;
-        const std::vector<TypeP> arg_types;
+        const std::vector<Type::pointer> arg_types;
 
-        bool validateArguments(std::vector<VariableP> variables);
+        bool validateArguments(std::vector<Variable::pointer> variables);
 
         bool operator==(const FunctionSignature &sig) const;
         bool operator!=(const FunctionSignature &sig) const { return !operator==(sig); }
         bool operator==(const FunctionSignature *sig) const { return operator==(*sig); }
         bool operator!=(const FunctionSignature *sig) const { return !operator==(sig); }
     };
-    typedef std::shared_ptr<FunctionSignature> FunctionSignatureP;
 }
 
 #endif

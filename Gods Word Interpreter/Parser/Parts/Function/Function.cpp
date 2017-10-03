@@ -5,12 +5,12 @@
 using namespace std;
 using namespace GWI;
 
-FunctionSignature::FunctionSignature(string _name, vector<TypeP> _arg_types)
+FunctionSignature::FunctionSignature(string _name, vector<Type::pointer> _arg_types)
     : name(_name), arg_types(_arg_types) {
 
 }
 
-bool FunctionSignature::validateArguments(std::vector<VariableP> variables) {
+bool FunctionSignature::validateArguments(std::vector<Variable::pointer> variables) {
     const int len = arg_types.size();
 
     if (variables.size() != len) {
@@ -30,12 +30,12 @@ bool FunctionSignature::operator==(const FunctionSignature &sig) const {
     return sig.name == name && sig.arg_types == arg_types;
 }
 
-FunctionBody::FunctionBody(vector<StatementP> &statements)
+FunctionBody::FunctionBody(vector<Statement::pointer> &statements)
     : Block(statements) {
 
 }
 
-Function::Function(const FunctionSignatureP &sig, const FunctionBodyP &_body)
+Function::Function(const FunctionSignature::pointer &sig, const FunctionBody::pointer &_body)
     : signature(sig), body(_body) {
 
 }

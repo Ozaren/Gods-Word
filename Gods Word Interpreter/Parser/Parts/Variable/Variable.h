@@ -3,32 +3,18 @@
 
 #include "../Type/Type.h"
 
-/*
-#define boolVariableP GWI::pointer<bool>::VariableP
-#define intVariableP GWI::pointer<int>::VariableP
-#define uintVariableP GWI::pointer<unsigned int>::VariableP
-#define floatVariableP GWI::pointer<double>::VariableP
-#define charVariableP GWI::pointer<char>::VariableP
-#define stringVariableP GWI::pointer<std::string>::VariableP
-
-#define make_boolVariableP new GWI::Variable<bool>
-#define make_intVariableP new GWI::Variable<int>
-#define make_uintVariableP new GWI::Variable<unsigned int>
-#define make_floatVariableP new GWI::Variable<double>
-#define make_charVariableP new GWI::Variable<char>
-#define make_stringVariableP new GWI::Variable<std::string>
-*/
-
 namespace GWI {
     typedef void* var_val;
     class Variable {
     public:
-        Variable(const TypeP &_type, var_val _value)
+        typedef std::shared_ptr<Variable> pointer;
+
+        Variable(const Type::pointer &_type, var_val _value)
             : type(_type), value(_value) {
 
         }
 
-        const TypeP type;
+        const Type::pointer type;
 
         Variable& operator=(var_val &val) { value = val; }
 
@@ -52,7 +38,5 @@ namespace GWI {
     private:
         var_val value;
     };
-
-    typedef std::shared_ptr<Variable> VariableP;
 }
 #endif
