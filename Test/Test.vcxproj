@@ -113,6 +113,11 @@
   <ItemGroup>
     <ClCompile Include="TestMain.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="error_handling.h" />
+    <ClInclude Include="linear_memory_buffer.h" />
+    <ClInclude Include="memory_buffer.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
