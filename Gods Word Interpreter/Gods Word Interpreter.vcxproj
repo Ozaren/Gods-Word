@@ -121,20 +121,16 @@
     <ClInclude Include="Lexer\Tokenizer.h" />
     <ClInclude Include="Lexer\TokenizerFile.h" />
     <ClInclude Include="Lexer\TokenizerString.h" />
-    <ClInclude Include="Parser\Parser.h" />
-    <ClInclude Include="Parser\Parts\Function\Function.h" />
-    <ClInclude Include="Parser\Parts\Function\FunctionBody.h" />
-    <ClInclude Include="Parser\Parts\Function\FunctionSignature.h" />
-    <ClInclude Include="Parser\Parts\Statement\Operator\BinaryOperator.h" />
-    <ClInclude Include="Parser\Parts\Statement\Block\Block.h" />
-    <ClInclude Include="Parser\Parts\Statement\Operator\LogicOperator.h" />
-    <ClInclude Include="Parser\Parts\Statement\Operator\UnaryOperator.h" />
-    <ClInclude Include="Parser\Parts\Statement\Statement.h" />
-    <ClInclude Include="Parser\Parts\Type\DefualtTypes.h" />
-    <ClInclude Include="Parser\Parts\Type\Type.h" />
-    <ClInclude Include="Parser\Parts\Type\TypeFunction.h" />
-    <ClInclude Include="Parser\Parts\Variable\Literals.h" />
-    <ClInclude Include="Parser\Parts\Variable\Variable.h" />
+    <ClInclude Include="Parser\Features\Error\error_handling.h" />
+    <ClInclude Include="Parser\Features\Fucntion\FunctionBody.h" />
+    <ClInclude Include="Parser\Features\Fucntion\FunctionSignature.h" />
+    <ClInclude Include="Parser\Features\Memory\linear_memory_buffer.h" />
+    <ClInclude Include="Parser\Features\Memory\memory_buffer.h" />
+    <ClInclude Include="Parser\Features\Pointers.h" />
+    <ClInclude Include="Parser\Features\Statement\Block.h" />
+    <ClInclude Include="Parser\Features\Statement\Statement.h" />
+    <ClInclude Include="Parser\Features\Type\Type.h" />
+    <ClInclude Include="Parser\Features\Value\Value.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lexer\Keywords.cpp" />
@@ -143,16 +139,6 @@
     <ClCompile Include="Lexer\Token.cpp" />
     <ClCompile Include="Lexer\Tokenizer.cpp" />
     <ClCompile Include="Lexer\TokenizerString.cpp" />
-    <ClCompile Include="Parser\Parser.cpp" />
-    <ClCompile Include="Parser\Parts\Function\Function.cpp" />
-    <ClCompile Include="Parser\Parts\Statement\Block\Block.cpp" />
-    <ClCompile Include="Parser\Parts\Statement\Operator\BinaryOperator.cpp" />
-    <ClCompile Include="Parser\Parts\Statement\Operator\LogicOperator.cpp" />
-    <ClCompile Include="Parser\Parts\Statement\Operator\UnaryOperator.cpp" />
-    <ClCompile Include="Parser\Parts\Type\DefualtTypes.cpp" />
-    <ClCompile Include="Parser\Parts\Type\Type.cpp" />
-    <ClCompile Include="Parser\Parts\Type\TypeFunction.cpp" />
-    <ClCompile Include="Parser\Parts\Variable\Literals.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -35,46 +35,34 @@
     <ClInclude Include="Lexer\TokenizerFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Parser.h">
+    <ClInclude Include="Parser\Features\Error\error_handling.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Parts\Variable\Variable.h">
+    <ClInclude Include="Parser\Features\Memory\linear_memory_buffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Parts\Type\Type.h">
+    <ClInclude Include="Parser\Features\Memory\memory_buffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Parts\Statement\Operator\BinaryOperator.h">
+    <ClInclude Include="Parser\Features\Statement\Statement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Parts\Statement\Operator\LogicOperator.h">
+    <ClInclude Include="Parser\Features\Value\Value.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Parts\Statement\Statement.h">
+    <ClInclude Include="Parser\Features\Statement\Block.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Parts\Statement\Block\Block.h">
+    <ClInclude Include="Parser\Features\Fucntion\FunctionSignature.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Parts\Statement\Operator\UnaryOperator.h">
+    <ClInclude Include="Parser\Features\Fucntion\FunctionBody.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Parts\Type\DefualtTypes.h">
+    <ClInclude Include="Parser\Features\Type\Type.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Parts\Variable\Literals.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Parser\Parts\Function\Function.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Parser\Parts\Type\TypeFunction.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Parser\Parts\Function\FunctionSignature.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Parser\Parts\Function\FunctionBody.h">
+    <ClInclude Include="Parser\Features\Pointers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -95,36 +83,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Lexer\TokenizerFile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Parser\Parser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Parser\Parts\Statement\Operator\BinaryOperator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Parser\Parts\Statement\Operator\LogicOperator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Parser\Parts\Statement\Operator\UnaryOperator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Parser\Parts\Type\DefualtTypes.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Parser\Parts\Type\Type.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Parser\Parts\Variable\Literals.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Parser\Parts\Statement\Block\Block.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Parser\Parts\Function\Function.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Parser\Parts\Type\TypeFunction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
