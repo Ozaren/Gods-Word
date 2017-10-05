@@ -6,7 +6,7 @@
 namespace GWI {
     class Statement {
     public:
-        virtual void execute(ColValue vars) = 0;
+        virtual void execute(ColValue &vars) = 0;
     };
 }
 

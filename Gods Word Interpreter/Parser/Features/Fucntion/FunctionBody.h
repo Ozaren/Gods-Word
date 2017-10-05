@@ -8,6 +8,7 @@
 namespace GWI {
     class FunctionBody : Block {
     public:
+        FunctionBody();
 
     };
 }

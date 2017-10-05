@@ -9,41 +9,45 @@ namespace GWI {
     Lots of typedefs here for convenience and sidestepping circular references
     Put all types here
     */
+
+    template<typename T>
+    using collection = std::vector<T>;
+    template<typename T>
+    using ptr = std::shared_ptr<T>;
+
     // Error
 
     // Function
     class FunctionBody;
     class FunctionSignature;
 
-    typedef std::shared_ptr<FunctionBody> PtrFunctionBody;
-    typedef std::shared_ptr<FunctionSignature> PtrFunctionSignature;
+    using PtrFunctionBody = ptr<FunctionBody>;
+    using PtrFunctionSignature = ptr<FunctionSignature>;
 
     // Memory
-    
+
     // Statement
     class Statement;
     class Block;
 
-    typedef std::shared_ptr<Statement> PtrStatement;
-    typedef std::shared_ptr<Block> PtrBlock;
+    using PtrStatement = ptr<Statement>;
+    using PtrBlock = ptr<Block>;
+
+    using ColStatement = collection<PtrStatement>;
 
     // Type
     class Type;
-    class TypeBody;
-    class TypeSignature;
 
-    typedef std::shared_ptr<Type> PtrType;
-    typedef std::shared_ptr<TypeBody> PtrTypeBody;
-    typedef std::shared_ptr<TypeSignature> PtrTypeSignature;
+    using PtrType = ptr<Type>;
 
-    typedef std::vector<TypeSignature>& ColTypeSignature;
+    using ColType = collection<PtrType>;
 
     // Value
     class Value;
 
-    typedef std::shared_ptr<Value> PtrValue;
+    using PtrValue = ptr<Value>;
 
-    typedef std::vector<Value>& ColValue;
+    using ColValue = collection<PtrValue>;
 }
 
 #endif

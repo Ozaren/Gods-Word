@@ -9,7 +9,7 @@ namespace GWI {
     class FunctionSignature {
     public:
         const std::string name;
-        const ColTypeSignature args;
+        const ColType args;
     };
 }
 

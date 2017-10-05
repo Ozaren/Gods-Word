@@ -129,6 +129,7 @@
     <ClInclude Include="Parser\Features\Pointers.h" />
     <ClInclude Include="Parser\Features\Statement\Block.h" />
     <ClInclude Include="Parser\Features\Statement\Statement.h" />
+    <ClInclude Include="Parser\Features\Type\DefaultTypes.h" />
     <ClInclude Include="Parser\Features\Type\Type.h" />
     <ClInclude Include="Parser\Features\Value\Value.h" />
   </ItemGroup>
@@ -139,6 +140,10 @@
     <ClCompile Include="Lexer\Token.cpp" />
     <ClCompile Include="Lexer\Tokenizer.cpp" />
     <ClCompile Include="Lexer\TokenizerString.cpp" />
+    <ClCompile Include="Parser\Features\Statement\Block.cpp" />
+    <ClCompile Include="Parser\Features\Type\DefaultTypes.cpp" />
+    <ClCompile Include="Parser\Features\Type\Type.cpp" />
+    <ClCompile Include="Parser\Features\Value\Value.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
