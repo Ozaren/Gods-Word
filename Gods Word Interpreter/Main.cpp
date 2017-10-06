@@ -21,7 +21,7 @@
 using namespace std;
 //using GWI::def_type;
 
-int main1() {
+int main() {
 
     system("pause");
     return 0;
@@ -35,7 +35,7 @@ long GetFileSize(std::string filename)
 }
 
 #include <sys\timeb.h>
-int main() {
+int main1() {
     cout << "start" << endl;
 
     struct timeb start, end;

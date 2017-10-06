@@ -4,46 +4,73 @@
 #include <memory>
 #include <vector>
 
-namespace GWI {
-    /*
-    Lots of typedefs here for convenience and sidestepping circular references
-    Put all types here
-    */
-    // Error
+#define __NAMESPACE__ gwi
+#define __START_NAMESPACE__ namespace __NAMESPACE__ {
+#define __END_NAMESPACE__ }
+#define __USE_NAMESPACE__ using namespace __NAMESPACE__;
 
-    // Function
-    class FunctionBody;
-    class FunctionSignature;
+__START_NAMESPACE__
+/*
+Lots of typedefs here for convenience and sidestepping circular references
+Put all types here
+*/
 
-    typedef std::shared_ptr<FunctionBody> PtrFunctionBody;
-    typedef std::shared_ptr<FunctionSignature> PtrFunctionSignature;
+template<typename T>
+using ptr = std::shared_ptr<T>;
+template<typename T>
+using vec = std::vector<T>;
 
-    // Memory
-    
-    // Statement
-    class Statement;
-    class Block;
+// Error
 
-    typedef std::shared_ptr<Statement> PtrStatement;
-    typedef std::shared_ptr<Block> PtrBlock;
+// Function
+class FunctionBody;
+class FunctionSignature;
+class Function;
 
-    // Type
-    class Type;
-    class TypeBody;
-    class TypeSignature;
+using PtrFunctionBody = ptr<FunctionBody>;
+using ConstFunctionBody = ptr<const FunctionBody>;
 
-    typedef std::shared_ptr<Type> PtrType;
-    typedef std::shared_ptr<TypeBody> PtrTypeBody;
-    typedef std::shared_ptr<TypeSignature> PtrTypeSignature;
+using PtrFunctionSignature = ptr<FunctionSignature>;
+using ConstFunctionSignature = ptr<const FunctionSignature>;
 
-    typedef std::vector<TypeSignature>& ColTypeSignature;
+using PtrFunction = ptr<Function>;
+using ConstFunction = ptr<const Function>;
 
-    // Value
-    class Value;
+// Memory
 
-    typedef std::shared_ptr<Value> PtrValue;
+// Statement
+class Statement;
+class Block;
 
-    typedef std::vector<Value>& ColValue;
-}
+using PtrStatement = ptr<Statement>;
+using ConstStatement = ptr<const Statement>;
+
+using PtrBlock = ptr<Block>;
+using ConstBlock = ptr<const Block>;
+
+// Type
+class Type;
+class TypeBody;
+class TypeSignature;
+
+using PtrType = ptr<Type>;
+using ConstType = ptr<const Type>;
+
+using PtrTypeBody = ptr<TypeBody>;
+using ConstTypeBody = ptr<const TypeBody>;
+
+using PtrTypeSignature = ptr<TypeSignature>;
+using ConstTypeSignature = ptr<const TypeSignature>;
+using ColPtrTypeSignature = vec<PtrTypeSignature>;
+using ColConstTypeSignature = vec<ConstTypeSignature>;
+
+// Value
+class Value;
+
+using PtrValue = ptr<Value>;
+using ConstValue = ptr<const Value>;
+using ColPtrValue = vec<PtrValue>;
+using ColConstValue = vec<ConstValue>;
+__END_NAMESPACE__
 
 #endif

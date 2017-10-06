@@ -5,16 +5,16 @@
 
 #include "../Pointers.h"
 
-namespace GWI {
-    class Type {
-    public:
+__START_NAMESPACE__
+class Type {
+public:
 
-        const std::string name;
-        const std::string group;
+    const std::string name;
+    const std::string group;
 
-    private:
-        
-    };
-}
+private:
+
+};
+__END_NAMESPACE__
 
 #endif

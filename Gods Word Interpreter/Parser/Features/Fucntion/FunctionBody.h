@@ -3,13 +3,15 @@
 
 #include <memory>
 
+#include "../Pointers.h"
+
 #include "../Statement/Block.h"
 
-namespace GWI {
+__START_NAMESPACE__
     class FunctionBody : Block {
     public:
 
     };
-}
+__END_NAMESPACE__
 
 #endif

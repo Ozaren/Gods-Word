@@ -3,11 +3,11 @@
 
 #include "../Pointers.h"
 
-namespace GWI {
-    class Statement {
-    public:
-        virtual void execute(ColValue vars) = 0;
-    };
-}
+__START_NAMESPACE__
+class Statement {
+public:
+    virtual void execute(ColValue vars) = 0;
+};
+__END_NAMESPACE__
 
 #endif // !__GWI_PARSER_FEATURES_STATEMENT__STATEMENT_H_

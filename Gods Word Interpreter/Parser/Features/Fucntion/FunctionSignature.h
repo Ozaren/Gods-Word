@@ -5,12 +5,12 @@
 
 #include "../Pointers.h"
 
-namespace GWI {
+__START_NAMESPACE__
     class FunctionSignature {
     public:
         const std::string name;
-        const ColTypeSignature args;
+        const ColPtrTypeSignature args;
     };
-}
+__END_NAMESPACE__
 
 #endif
