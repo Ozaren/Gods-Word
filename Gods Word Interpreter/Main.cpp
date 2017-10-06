@@ -5,21 +5,10 @@
 #include "Lexer/Keywords.h"
 #include "Lexer/Tokenizer.h"
 #include "Lexer/TokenizerFile.h"
-/*
-#include "Parser\Parts\Type\Type.h"
-#include "Parser\Parts\Type\DefualtTypes.h"
 
-#include "Parser\Parts\Function\FunctionSignature.h"
-#include "Parser\Parts\Function\FunctionBody.h"
-#include "Parser\Parts\Function\Function.h"
+#include "Parser/Features/Type/Type.h"
 
-#include "Parser\Parts\Statement\Statement.h"
-
-#include "Parser\Parts\Variable\Variable.h"
-#include "Parser\Parts\Variable\Literals.h"
-*/
 using namespace std;
-//using GWI::def_type;
 
 int main() {
 

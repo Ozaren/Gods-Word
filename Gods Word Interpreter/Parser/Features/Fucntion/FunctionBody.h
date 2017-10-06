@@ -10,6 +10,7 @@
 __START_NAMESPACE__
     class FunctionBody : Block {
     public:
+        FunctionBody();
 
     };
 __END_NAMESPACE__

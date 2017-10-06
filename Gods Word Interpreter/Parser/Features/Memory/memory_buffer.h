@@ -3,6 +3,7 @@
 #include <memory>
 #include <vector>
 #include <iostream>
+#include <sstream>
 
 #include "../Error/error_handling.h"
 
