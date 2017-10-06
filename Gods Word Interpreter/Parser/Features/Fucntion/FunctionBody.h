@@ -8,11 +8,13 @@
 #include "../Statement/Block.h"
 
 __START_NAMESPACE__
-    class FunctionBody : Block {
-    public:
-        FunctionBody();
 
-    };
+class FunctionBody : Block {
+public:
+    FunctionBody();
+
+};
+
 __END_NAMESPACE__
 
 #endif

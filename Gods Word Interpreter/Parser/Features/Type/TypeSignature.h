@@ -6,19 +6,21 @@
 #include "../Pointers.h"
 
 __START_NAMESPACE__
+
 class TypeSignature {
 public:
     std::string name;
     std::string group;
 
     TypeSignature(std::string name, std::string group);
-    ~TypeSignature() {}
 
-    void link(PtrType type);
-    ConstType getLinkType() const;
+    void bind(PtrType type);
+    ConstType bound_to() const;
+
 private:
     PtrType link_type;
 };
+
 __END_NAMESPACE__
 
 #endif

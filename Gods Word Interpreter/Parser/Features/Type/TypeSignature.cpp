@@ -9,15 +9,16 @@ __USE_NAMESPACE__
 
 TypeSignature::TypeSignature(std::string _name, std::string _group)
     : name(_name), group(_group), link_type(nullptr) {
+
 }
 
-void TypeSignature::link(PtrType type) {
+void TypeSignature::bind(PtrType type) {
     if (link_type.get() == (Type*) nullptr)
         link_type = type;
     else
         PRINT_ERROR("Type Signature Link Error", "Cannot re-link a type signature");
 }
 
-ConstType TypeSignature::getLinkType() const {
+ConstType TypeSignature::bound_to() const {
     return link_type;
 }

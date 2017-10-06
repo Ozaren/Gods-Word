@@ -6,7 +6,7 @@
 __START_NAMESPACE__
 class Statement {
 public:
-    virtual void execute(ColValue vars) = 0;
+    virtual void execute(ColPtrVariable vars) = 0;
 };
 __END_NAMESPACE__
 

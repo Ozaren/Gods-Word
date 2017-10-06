@@ -6,16 +6,21 @@
 #include "Lexer/Tokenizer.h"
 #include "Lexer/TokenizerFile.h"
 
+#include "Parser/Features/Pointers.h"
 #include "Parser/Features/Type/Type.h"
+#include "Parser/Features/Type/TypeSignature.h"
+
 
 using namespace std;
+__USE_NAMESPACE__
 
 int main() {
-
+    TypeSignature sig("big", "user def");
+    Type type(ConstTypeSignature(sig), ColPtrVariable(), ColConstTypeSignature());
     system("pause");
     return 0;
 }
-
+#if false
 long GetFileSize(std::string filename)
 {
     struct stat stat_buf;
@@ -57,3 +62,4 @@ int main1() {
 
     return 0;
 }
+#endif

@@ -59,13 +59,13 @@
     <ClInclude Include="Parser\Features\Type\Type.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Features\Value\Value.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Parser\Features\Pointers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Parser\Features\Type\TypeSignature.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser\Features\Value\Variable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -92,6 +92,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Parser\Features\Type\TypeSignature.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser\Features\Type\Type.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

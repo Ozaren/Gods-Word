@@ -6,11 +6,15 @@
 #include "../Pointers.h"
 
 __START_NAMESPACE__
-    class FunctionSignature {
-    public:
-        const std::string name;
-        const ColPtrTypeSignature args;
-    };
+
+class FunctionSignature {
+public:
+    const std::string name;
+    const ColPtrTypeSignature args;
+
+    FunctionSignature(std::string name, ColPtrTypeSignature &args);
+};
+
 __END_NAMESPACE__
 
 #endif

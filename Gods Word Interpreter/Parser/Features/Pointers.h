@@ -65,12 +65,13 @@ using ColPtrTypeSignature = vec<PtrTypeSignature>;
 using ColConstTypeSignature = vec<ConstTypeSignature>;
 
 // Value
-class Value;
+class Variable;
 
-using PtrValue = ptr<Value>;
-using ConstValue = ptr<const Value>;
-using ColPtrValue = vec<PtrValue>;
-using ColConstValue = vec<ConstValue>;
+using PtrVariable = ptr<Variable>;
+using ConstVariable = ptr<const Variable>;
+using ColPtrVariable = vec<PtrVariable>;
+using ColConstVariable = vec<ConstVariable>;
+
 __END_NAMESPACE__
 
 #endif

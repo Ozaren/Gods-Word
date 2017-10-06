@@ -6,15 +6,26 @@
 #include "../Pointers.h"
 
 __START_NAMESPACE__
+
 class Type {
 public:
+    const ConstTypeSignature signature;
 
-    const std::string name;
-    const std::string group;
+    Type(ConstTypeSignature signature, ColPtrVariable type_variables,
+        ColConstTypeSignature object_variables, size_t known_size = 0);
+
+    size_t get_object_size();
+
+    ColPtrVariable& get_type_variables();
+    const ColConstTypeSignature& get_object_variable_types() const;
 
 private:
+    ColPtrVariable type_variables;
+    ColConstTypeSignature object_variable_types;
 
+    int known_size;
 };
+
 __END_NAMESPACE__
 
 #endif

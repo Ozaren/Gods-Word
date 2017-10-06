@@ -1,20 +1,29 @@
 #include "Type.h"
 
+#include "TypeSignature.h"
+
 using namespace std;
-using namespace GWI;
+__USE_NAMESPACE__
 
-Type::Type(string _name, string _group, ColType &_dynamic_value_types, ColValue &_static_values, size_t _known_size)
-    : name(_name), group(_group), known_size(_known_size),
-    static_values(_static_values), dynamic_value_types(_dynamic_value_types) {
-
+Type::Type(ConstTypeSignature _signature, ColPtrVariable _type_variables,
+    ColConstTypeSignature _object_variable_types, size_t _known_size)
+    : signature(_signature), type_variables(_type_variables),
+    object_variable_types(_object_variable_types), known_size(_known_size) {
+    
 }
 
-size_t Type::getObjectSize() const {
-    if (known_size <= 0) {
+size_t Type::get_object_size() {
+    if (known_size == 0) {
         size_t size = 0;
 
-        for (PtrType t : dynamic_value_types) {
-            size += t->getObjectSize();
+        for (ConstTypeSignature sig: object_variable_types) {
+            size_t ks = sig->bound_to()->known_size;
+            if (ks == 0) {
+                size += sizeof(ConstVariable);
+            }
+            else {
+                size += ks;
+            }
         }
 
         return size;
@@ -24,10 +33,10 @@ size_t Type::getObjectSize() const {
     }
 }
 
-ColValue& Type::getStaticValues() {
-    return static_values;
+ColPtrVariable& Type::get_type_variables() {
+    return type_variables;
 }
 
-const ColType& Type::getDynamicValueTypes() const {
-    return dynamic_value_types;
+const ColConstTypeSignature& Type::get_object_variable_types() const {
+    return object_variable_types;
 }
