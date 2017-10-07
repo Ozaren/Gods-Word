@@ -132,6 +132,7 @@
     <ClInclude Include="Parser\Features\Type\Type.h" />
     <ClInclude Include="Parser\Features\Type\TypeSignature.h" />
     <ClInclude Include="Parser\Features\Value\Value.h" />
+    <ClInclude Include="Parser\Features\Variable\Variable.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lexer\Keywords.cpp" />
@@ -141,6 +142,7 @@
     <ClCompile Include="Lexer\Tokenizer.cpp" />
     <ClCompile Include="Lexer\TokenizerString.cpp" />
     <ClCompile Include="Parser\Features\Error\error_handling.cpp" />
+    <ClCompile Include="Parser\Features\Type\Type.cpp" />
     <ClCompile Include="Parser\Features\Type\TypeSignature.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

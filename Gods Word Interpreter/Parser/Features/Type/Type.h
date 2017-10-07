@@ -1,5 +1,5 @@
-#ifndef __GWI_PARSER_FEATURES_TYPE__TYPE_LINKER_H_
-#define __GWI_PARSER_FEATURES_TYPE__TYPE_LINKER_H_
+#ifndef __GWI_PARSER_FEATURES_TYPE__TYPE_H_
+#define __GWI_PARSER_FEATURES_TYPE__TYPE_H_
 
 #include <string>
 
@@ -11,7 +11,7 @@ class Type {
 public:
     const ConstTypeSignature signature;
 
-    Type(ConstTypeSignature signature, ColPtrVariable type_variables,
+    Type(PtrTypeSignature signature, ColPtrVariable type_variables,
         ColConstTypeSignature object_variables, size_t known_size = 0);
 
     size_t get_object_size();

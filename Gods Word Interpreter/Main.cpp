@@ -10,14 +10,25 @@
 #include "Parser/Features/Type/Type.h"
 #include "Parser/Features/Type/TypeSignature.h"
 
-
 using namespace std;
 __USE_NAMESPACE__
 
 int main() {
-    TypeSignature sig("big", "user def");
-    Type type(ConstTypeSignature(sig), ColPtrVariable(), ColConstTypeSignature());
+    PtrTypeSignature sig(new TypeSignature("big", "user def"));
+
+    ColPtrVariable cpv = ColPtrVariable();
+    ColConstTypeSignature ccts = ColConstTypeSignature();
+
+    Type *type = new Type(sig, cpv, ccts);
+        
+    cout << sig->name << endl;
+    cout << sig->group << endl;
+
+    cout << type->get_object_size() << endl;
+
     system("pause");
+
+    delete type;
     return 0;
 }
 #if false

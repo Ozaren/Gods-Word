@@ -65,7 +65,10 @@
     <ClInclude Include="Parser\Features\Type\TypeSignature.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Features\Value\Variable.h">
+    <ClInclude Include="Parser\Features\Value\Value.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser\Features\Variable\Variable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

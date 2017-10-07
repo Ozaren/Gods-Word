@@ -1,22 +1,23 @@
 #include "Type.h"
 
 #include "TypeSignature.h"
+#include "../Variable/Variable.h"
 
 using namespace std;
 __USE_NAMESPACE__
 
-Type::Type(ConstTypeSignature _signature, ColPtrVariable _type_variables,
+Type::Type(PtrTypeSignature _signature, ColPtrVariable _type_variables,
     ColConstTypeSignature _object_variable_types, size_t _known_size)
     : signature(_signature), type_variables(_type_variables),
     object_variable_types(_object_variable_types), known_size(_known_size) {
-    
+
 }
 
 size_t Type::get_object_size() {
     if (known_size == 0) {
         size_t size = 0;
 
-        for (ConstTypeSignature sig: object_variable_types) {
+        for (ConstTypeSignature sig : object_variable_types) {
             size_t ks = sig->bound_to()->known_size;
             if (ks == 0) {
                 size += sizeof(ConstVariable);
