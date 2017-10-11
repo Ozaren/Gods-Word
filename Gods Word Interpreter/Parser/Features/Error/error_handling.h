@@ -12,7 +12,7 @@
 #else
 void printStackTrace(std::ostream& out);
 
-#define PRINT_ERROR(title,msg) std::cout << title << ": " << msg << std::endl; printStackTrace(std::cout); throw ""
+#define PRINT_ERROR(title,msg) { std::cout << title << ": " << msg << std::endl; printStackTrace(std::cout); throw ""; }
 
 
 #endif

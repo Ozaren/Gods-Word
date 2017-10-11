@@ -13,12 +13,12 @@ public:
     std::string group;
 
     TypeSignature(std::string name, std::string group);
-
-    void bind(PtrType type);
-    ConstType bound_to() const;
+    ~TypeSignature() {}
+    void bind(Type *type);
+    const Type* bound_to() const;
 
 private:
-    PtrType link_type;
+    Type *link_type;
 };
 
 __END_NAMESPACE__

@@ -12,13 +12,13 @@ TypeSignature::TypeSignature(std::string _name, std::string _group)
 
 }
 
-void TypeSignature::bind(PtrType type) {
-    if (link_type.get() == (Type*) nullptr)
+void TypeSignature::bind(Type *type) {
+    if (link_type == (Type*) nullptr)
         link_type = type;
     else
         PRINT_ERROR("Type Signature Link Error", "Cannot re-link a type signature");
 }
 
-ConstType TypeSignature::bound_to() const {
+const Type* TypeSignature::bound_to() const {
     return link_type;
 }

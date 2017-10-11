@@ -11,9 +11,11 @@ class Type {
 public:
     const ConstTypeSignature signature;
 
-    Type(PtrTypeSignature signature, ColPtrVariable type_variables,
+    Type(TypeSignature *signature, ColPtrVariable type_variables,
         ColConstTypeSignature object_variables, size_t known_size = 0);
-
+    ~Type() {
+        cout << "run with it" << endl;
+    }
     size_t get_object_size();
 
     ColPtrVariable& get_type_variables();
@@ -23,7 +25,7 @@ private:
     ColPtrVariable type_variables;
     ColConstTypeSignature object_variable_types;
 
-    int known_size;
+    size_t known_size;
 };
 
 __END_NAMESPACE__

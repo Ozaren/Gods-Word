@@ -6,11 +6,11 @@
 using namespace std;
 __USE_NAMESPACE__
 
-Type::Type(PtrTypeSignature _signature, ColPtrVariable _type_variables,
+Type::Type(TypeSignature *_signature, ColPtrVariable _type_variables,
     ColConstTypeSignature _object_variable_types, size_t _known_size)
     : signature(_signature), type_variables(_type_variables),
     object_variable_types(_object_variable_types), known_size(_known_size) {
-
+    _signature->bind(this);
 }
 
 size_t Type::get_object_size() {

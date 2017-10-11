@@ -3,6 +3,10 @@
 
 #include <memory>
 #include <vector>
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 #define __NAMESPACE__ gwi
 #define __START_NAMESPACE__ namespace __NAMESPACE__ {

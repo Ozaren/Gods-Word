@@ -14,23 +14,23 @@ using namespace std;
 __USE_NAMESPACE__
 
 int main() {
-    PtrTypeSignature sig(new TypeSignature("big", "user def"));
+    try {
+        TypeSignature *sig(new TypeSignature("big", "user def"));
+        ColPtrVariable cpv = ColPtrVariable();
+        ColConstTypeSignature ccts = ColConstTypeSignature();
 
-    ColPtrVariable cpv = ColPtrVariable();
-    ColConstTypeSignature ccts = ColConstTypeSignature();
+        PtrType type(new Type(sig, cpv, ccts));
 
-    Type *type = new Type(sig, cpv, ccts);
-        
-    cout << sig->name << endl;
-    cout << sig->group << endl;
+        cout << type->signature->name << endl;
+        cout << sig->bound_to()->signature->name << endl;
+    }
+    catch (...) {
 
-    cout << type->get_object_size() << endl;
-
+    }
     system("pause");
-
-    delete type;
     return 0;
 }
+
 #if false
 long GetFileSize(std::string filename)
 {
