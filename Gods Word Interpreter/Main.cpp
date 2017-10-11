@@ -15,14 +15,18 @@ __USE_NAMESPACE__
 
 int main() {
     try {
-        TypeSignature *sig(new TypeSignature("big", "user def"));
+        PtrTypeSignature sig(new TypeSignature("big", "user def"));
         ColPtrVariable cpv = ColPtrVariable();
         ColConstTypeSignature ccts = ColConstTypeSignature();
 
         PtrType type(new Type(sig, cpv, ccts));
+        PtrType type2(new Type(sig, cpv, ccts));
 
         cout << type->signature->name << endl;
         cout << sig->bound_to()->signature->name << endl;
+    }
+    catch (const char *c) {
+
     }
     catch (...) {
 

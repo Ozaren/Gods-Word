@@ -8,13 +8,13 @@
 __START_NAMESPACE__
 
 class TypeSignature {
+    friend Type;
 public:
     std::string name;
     std::string group;
 
     TypeSignature(std::string name, std::string group);
     ~TypeSignature() {}
-    void bind(Type *type);
     const Type* bound_to() const;
 
 private:
