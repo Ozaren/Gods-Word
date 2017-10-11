@@ -7,14 +7,14 @@
 
 __START_NAMESPACE__
 
-namespace def_type {
-    const PtrType BOOL;
-    const PtrType SINT;
-    const PtrType UINT;
-    const PtrType FLOT;
-    const PtrType CHAR;
-    const PtrType STRN;
-}
+struct def_type {
+    static const PtrType BOOL;
+    static const PtrType SINT;
+    static const PtrType UINT;
+    static const PtrType FLOT;
+    static const PtrType CHAR;
+    static const PtrType STRN;
+};
 
 __END_NAMESPACE__
 

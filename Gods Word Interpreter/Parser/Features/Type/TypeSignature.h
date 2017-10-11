@@ -10,8 +10,9 @@ __START_NAMESPACE__
 class TypeSignature {
     friend Type;
 public:
-    std::string name;
-    std::string group;
+    const std::string full_name;
+    const std::string name;
+    const std::string group;
 
     TypeSignature(std::string name, std::string group);
     ~TypeSignature() {}

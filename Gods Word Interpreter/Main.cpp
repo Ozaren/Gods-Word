@@ -1,30 +1,38 @@
 #include <iostream>
 #include <vector>
 
+#include <boost/any.hpp>
+
 #include "Lexer/Token.h"
 #include "Lexer/Keywords.h"
 #include "Lexer/Tokenizer.h"
 #include "Lexer/TokenizerFile.h"
 
 #include "Parser/Features/Pointers.h"
+
+#include "Parser/Features/Type/DefualtType.h"
 #include "Parser/Features/Type/Type.h"
 #include "Parser/Features/Type/TypeSignature.h"
+
+#include "Parser/Features/Variable/Variable.h"
 
 using namespace std;
 __USE_NAMESPACE__
 
 int main() {
     try {
+        cout << def_type::BOOL->signature->full_name << endl;
+
         PtrTypeSignature sig(new TypeSignature("big", "user def"));
+
         ColPtrVariable cpv = ColPtrVariable();
-        ColConstTypeSignature ccts = ColConstTypeSignature({ sig });
+        ColConstTypeSignature ccts = ColConstTypeSignature({  });
 
         PtrType type(new Type(sig, cpv, ccts));
 
-        Variable var(type);
-
         cout << type->signature->name << endl;
         cout << sig->bound_to()->signature->name << endl;
+        // cout << var->get<PtrVariable>(0)->type->signature->name << endl;
     }
     catch (const char *c) {
 

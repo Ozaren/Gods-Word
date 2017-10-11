@@ -107,5 +107,8 @@
     <ClCompile Include="Parser\Features\Variable\Variable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Parser\Features\Type\DefualtType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

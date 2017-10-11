@@ -144,6 +144,7 @@
     <ClCompile Include="Lexer\Tokenizer.cpp" />
     <ClCompile Include="Lexer\TokenizerString.cpp" />
     <ClCompile Include="Parser\Features\Error\error_handling.cpp" />
+    <ClCompile Include="Parser\Features\Type\DefualtType.cpp" />
     <ClCompile Include="Parser\Features\Type\Type.cpp" />
     <ClCompile Include="Parser\Features\Type\TypeSignature.cpp" />
     <ClCompile Include="Parser\Features\Variable\Variable.cpp" />

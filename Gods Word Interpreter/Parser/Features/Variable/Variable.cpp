@@ -32,8 +32,13 @@ Variable::Variable(PtrType _type)
     }
 }
 
-any Variable::get(int pos) {
+any Variable::get_any(size_t pos) {
     return memory[pos];
+}
+
+template<typename type>
+type Variable::get(size_t pos) {
+    return boost::any_cast<type>(get(pos));
 }
 
 bool Variable::validate(VarTypes t2) {
