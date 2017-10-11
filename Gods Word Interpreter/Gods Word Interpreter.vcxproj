@@ -114,6 +114,7 @@
     <None Include="00 Examples\commments and output.gw" />
     <None Include="00 Examples\load_test.gw" />
     <None Include="00 Examples\variables.gw" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lexer\Keywords.h" />
@@ -129,6 +130,7 @@
     <ClInclude Include="Parser\Features\Pointers.h" />
     <ClInclude Include="Parser\Features\Statement\Block.h" />
     <ClInclude Include="Parser\Features\Statement\Statement.h" />
+    <ClInclude Include="Parser\Features\Type\DefualtType.h" />
     <ClInclude Include="Parser\Features\Type\Type.h" />
     <ClInclude Include="Parser\Features\Type\TypeSignature.h" />
     <ClInclude Include="Parser\Features\Value\Value.h" />
@@ -144,8 +146,16 @@
     <ClCompile Include="Parser\Features\Error\error_handling.cpp" />
     <ClCompile Include="Parser\Features\Type\Type.cpp" />
     <ClCompile Include="Parser\Features\Type\TypeSignature.cpp" />
+    <ClCompile Include="Parser\Features\Variable\Variable.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\boost.1.65.1.0\build\native\boost.targets" Condition="Exists('..\packages\boost.1.65.1.0\build\native\boost.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\boost.1.65.1.0\build\native\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\boost.1.65.1.0\build\native\boost.targets'))" />
+  </Target>
 </Project>

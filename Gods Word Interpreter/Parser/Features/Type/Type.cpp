@@ -6,10 +6,12 @@
 using namespace std;
 __USE_NAMESPACE__
 
+size_t Type::next_id = 0;
+
 Type::Type(PtrTypeSignature _signature, ColPtrVariable _type_variables,
     ColConstTypeSignature _object_variable_types, size_t _known_size)
     : signature(_signature->link_type == nullptr ? _signature : nullptr), type_variables(_type_variables),
-    object_variable_types(_object_variable_types), known_size(_known_size) {
+    object_variable_types(_object_variable_types), known_size(_known_size), id(next_id++) {
     if (_signature->link_type == nullptr)
         _signature->link_type = this;
     else

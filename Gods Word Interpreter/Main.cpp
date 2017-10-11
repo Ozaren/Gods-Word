@@ -17,10 +17,11 @@ int main() {
     try {
         PtrTypeSignature sig(new TypeSignature("big", "user def"));
         ColPtrVariable cpv = ColPtrVariable();
-        ColConstTypeSignature ccts = ColConstTypeSignature();
+        ColConstTypeSignature ccts = ColConstTypeSignature({ sig });
 
         PtrType type(new Type(sig, cpv, ccts));
-        PtrType type2(new Type(sig, cpv, ccts));
+
+        Variable var(type);
 
         cout << type->signature->name << endl;
         cout << sig->bound_to()->signature->name << endl;

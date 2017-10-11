@@ -2,38 +2,38 @@
 #define __GWI_PARSER_FEATURES_VALUE__VARIABLE_H_
 
 #include <string>
+#include <vector>
+
+#include <boost/any.hpp>
 
 #include "../Pointers.h"
 
-#include "../Memory/linear_memory_buffer.h"
-
 __START_NAMESPACE__
 enum VarTypes { BOOLEAN, SIGNED_INTEGER, UNSIGNED_INTEGER, FLOAT, CHARACTER, STRING, VARIABLE };
-
-union VariableValue {
-    bool b_val;
-    int si_val;
-    size_t ui_val;
-    double f_val;
-    char c_val;
-    std::string s_val;
-    PtrVariable v_val;
-};
-
-struct Value {
-    const VariableValue val;
-    const VarTypes type;
-};
 
 class Variable {
 public:
     const PtrType type;
 
-    Value get(int pos);
-    void set(int pos, Value val);
+    Variable(PtrType type);
+
+    boost::any get(int pos);
+
+    void set(int pos, bool val);
+    void set(int pos, int val);
+    void set(int pos, size_t val);
+    void set(int pos, double val);
+    void set(int pos, char val);
+    void set(int pos, std::string val);
+    void set(int pos, const PtrVariable &val);
+    void set(int pos, const PtrType &val);
+    void set(int pos, const PtrFunction &val);
 
 private:
-    linear_memory_buffer memory;
+    std::vector<VarTypes> types;
+    std::vector<boost::any> memory;
+
+    bool validate(VarTypes type);
 };
 __END_NAMESPACE__
 

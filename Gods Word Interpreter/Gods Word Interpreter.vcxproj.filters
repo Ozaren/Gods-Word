@@ -18,6 +18,7 @@
     <None Include="00 Examples\commments and output.gw" />
     <None Include="00 Examples\variables.gw" />
     <None Include="00 Examples\load_test.gw" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lexer\Tokenizer.h">
@@ -71,6 +72,9 @@
     <ClInclude Include="Parser\Features\Variable\Variable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Parser\Features\Type\DefualtType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lexer\Token.cpp">
@@ -98,6 +102,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Parser\Features\Type\Type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser\Features\Variable\Variable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

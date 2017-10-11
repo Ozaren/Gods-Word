@@ -5,6 +5,8 @@
 #include <vector>
 #include <iostream>
 
+#include "Error/error_handling.h"
+
 using std::cout;
 using std::endl;
 
